@@ -250,7 +250,7 @@ function startSeriesRest() {
   timeLeft = globalRest;
   updateDisplay(`Descanso entre series (${currentSeriesSet - 1}/${totalSeries})`);
   speak(`Descanso de ${timeLeft} segundos entre series`, "es-ES");
-  speak(`Rest of ${timeLeft} seconds between sets`, "en-US");
+  speak(`Rest of ${timeLeft} seconds between series`, "en-US");
 
   clearInterval(timerInterval);
   timerInterval = setInterval(() => {
