@@ -92,10 +92,6 @@ function speak(text, lang) {
   speechSynthesis.speak(msg);
 }
 
-function textToSpeakFallback(texts) {
-  return Object.values(texts)[0] || "";
-}
-
 function beep(frequency = 880, duration = 0.2) {
   const ctx = new (window.AudioContext || window.webkitAudioContext)();
   const osc = ctx.createOscillator();
@@ -167,19 +163,6 @@ deleteRoutineBtn.addEventListener("click", () => {
     }
   }
 });
-
-function getSelectedLanguages() {
-  const checkboxes = document.querySelectorAll("#language-options .form-check-input");
-  const selected = [];
-
-  checkboxes.forEach(cb => {
-    if (cb.checked && cb.value) {
-      selected.push(cb.value);
-    }
-  });
-
-  return selected;
-}
 
 function startExercise() {
   const ex = exercises[currentIndex];
